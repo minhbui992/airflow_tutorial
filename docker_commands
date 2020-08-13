@@ -1,10 +1,17 @@
 # pull an image that contains airflows
 docker pull puckel/docker-airflow
 
-# run the image
-docker run -d -p 8080:8080 puckel/docker-airflow webserver
+# run the image and name it airflow_docker
+docker run -d -p 8080:8080 --name airflow_docker puckel/docker-airflow webserver
+
+# stop image
+docker stop airflow_docker
+
+# rm image
+docker rm airflow_docker
 
 #ls all downloaded image
 docker images
 
-#connect to local volumes
+#connect to local volumes and name names
+docker run -d -p 8080:8080 -v "C:/Users/minh.bui/OneDrive - Interpublic/Airflow_Tutorial/":/usr/local/airflow/dags --name airflow_docker  puckel/docker-airflow webserver

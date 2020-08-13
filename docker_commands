@@ -1,0 +1,10 @@
+# pull an image that contains airflows
+docker pull puckel/docker-airflow
+
+# run the image
+docker run -d -p 8080:8080 puckel/docker-airflow webserver
+
+#ls all downloaded image
+docker images
+
+#connect to local volumes
